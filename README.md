@@ -1,7 +1,7 @@
 # nvidia-fan-curve
 Nvidia-fan-curve for custom fan curve for Linux
 
-🌀 NVIDIA Fan Curve Script
+🌀 NVIDIA Fan Curve Script for RTX 3090 FE
 
 A lightweight bash script to control NVIDIA GPU fans on Linux without needing GreenWithEnvy (GWE) or Flatpak.
 
@@ -25,52 +25,6 @@ It sets a custom fan curve and applies a 330W power limit, keeping your GPU cool
 
 NVIDIA driver installed with Coolbits=4 or higher enabled
 
-Tools:
-
-sudo apt install nvidia-utils-535 nvidia-settings
-
-
-(replace 535 with your driver version)
-
-📜 Installation
-
-Clone this repo:
-
-git clone https://github.com/<your-username>/nvidia-fan-curve.git
-cd nvidia-fan-curve
-
-
-Make the script executable:
-
-chmod +x nvidia-fan-curve.sh
-
-
-Test run manually:
-
-sudo ./nvidia-fan-curve.sh
-
-🚀 Auto-start on Boot
-Option 1: Startup Applications (GUI)
-
-Open Startup Applications Preferences
-
-Add a new entry:
-
-Name: NVIDIA Fan Curve
-Command: sudo /home/<user>/nvidia-fan-curve/nvidia-fan-curve.sh
-
-Option 2: Systemd Service
-
-Copy the example service file:
-
-sudo cp nvidia-fan-curve.service /etc/systemd/system/
-sudo systemctl enable --now nvidia-fan-curve.service
-
-
-Check status/logs:
-
-systemctl status nvidia-fan-curve.service
-journalctl -u nvidia-fan-curve.service -f
 
 🔧 Default Fan Curve
 
@@ -112,9 +66,6 @@ A: NVIDIA utilities require elevated privileges to change fan speed and power li
 Q: I have multiple GPUs. Can I control them?
 A: Yes — change GPU=0 to another index in the script.
 
-📸 Demo
-
-(Add a screenshot of your nvidia-smi dmon showing temps + fans here!)
 
 🤝 Contributing
 
